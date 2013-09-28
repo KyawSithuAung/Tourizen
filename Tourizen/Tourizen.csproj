@@ -40,14 +40,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <HintPath>..\..\..\..\Libraries &amp; SDK\Paypal\rest-api-sdk-dotnet-master\rest-api-sdk-dotnet-master\Source\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+      <HintPath>E:\Libraries &amp; SDK\Paypal\rest-api-sdk-dotnet-master\rest-api-sdk-dotnet-master\Source\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>E:\Libraries &amp; SDK\Paypal\rest-api-sdk-dotnet-master\rest-api-sdk-dotnet-master\Source\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PayPalAdaptivePaymentsSDK">
-      <HintPath>..\..\..\..\Libraries &amp; SDK\Paypal\adaptivepayments-sdk-dotnet-master\adaptivepayments-sdk-dotnet-master\Samples\AdaptivePaymentsSampleApp\lib\PayPalAdaptivePaymentsSDK.dll</HintPath>
+      <HintPath>E:\Libraries &amp; SDK\Paypal\adaptivepayments-sdk-dotnet-master\adaptivepayments-sdk-dotnet-master\Samples\AdaptivePaymentsSampleApp\lib\PayPalAdaptivePaymentsSDK.dll</HintPath>
     </Reference>
     <Reference Include="PayPalCoreSDK">
-      <HintPath>..\..\..\..\Libraries &amp; SDK\Paypal\rest-api-sdk-dotnet-master\rest-api-sdk-dotnet-master\Source\packages\PayPalCoreSDK.1.3.4\lib\PayPalCoreSDK.dll</HintPath>
+      <HintPath>E:\Libraries &amp; SDK\Paypal\rest-api-sdk-dotnet-master\rest-api-sdk-dotnet-master\Source\packages\PayPalCoreSDK.1.3.4\lib\PayPalCoreSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

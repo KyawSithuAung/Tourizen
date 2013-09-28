@@ -4,57 +4,81 @@
 }
 
 @{
-    var Detail = Session["Detail"] as Tourizen.Models.DetailModel;
+    var detail = Session["Detail"] as Tourizen.Models.DetailModel;
 }
 
-<div class="container" style="padding-top: 50px">
+<div class="row">
 
-    <div class="row">
+    <!--Booking-->
+    <div class="col-sm-5">
 
-        <div class="col-sm-1"></div>
+        <div class="row">
 
-        <!--Booking-->
-        <div class="col-sm-4">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
 
-            <div class="row">
+                    <div class="panel-heading">
+                        <h3>Booking Detail</h3>
+                    </div>
 
-                <div class="col-sm-12">
-                    <div class="panel panel-default">
+                    <div class="panel-body">
+                        
+                            <div class="row" style="margin-top: 15px">
+                                <div class="col-sm-12">
+                                    <label class="text-primary"><strong>Check In</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>@detail.Booking.CheckIn.ToLongDateString()</label>
+                                </div>
+                            </div>
+                        
 
-                        <div class="panel-heading">
-                            <h3 class="panel-header">Booking Detail</h3>
+                        
+                            <div class="row" style="margin-top: 15px">
+                                <div class="col-sm-12">
+                                    <label class="text-primary"><strong>Check Out</strong></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>@detail.Booking.CheckOut.ToLongDateString()</label>
+                                </div>
+                            </div>
+                        
+
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-sm-12">
+                                <label><strong class="text-primary">Total Night - </strong>@detail.Booking.NumberNight Night</label>
+                            </div>
                         </div>
 
-                        <div class="col-sm-12">
-                            <h5><strong>Check In - </strong>@Detail.Booking.CheckIn.ToLongDateString()</h5>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <h5><strong>Check Out - </strong>@Detail.Booking.CheckOut.ToLongDateString()</h5>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <h5><strong>Total Night - </strong>@Detail.Booking.NumberNight Night</h5>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <h5><strong>Total Room - </strong>@Detail.Booking.NumberRoom Room</h5>
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-sm-12">
+                                <label><strong class="text-primary">Total Room - </strong>@detail.Booking.NumberRoom Room</label>
+                            </div>
                         </div>
 
                         <hr />
 
-                        <div class="col-sm-12">
-                            <h5><strong>@Detail.RoomType.Name</strong>
-                                ( @Detail.Hotel.Name )</h5>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5><strong>@detail.RoomType.Name</strong>
+                                ( @detail.Hotel.Name )</h5>
+                            </div>  
                         </div>
 
-                        <div class="col-sm-12">
-                            <h5><strong>Guest Per Room - </strong>@Detail.RoomType.GuestPerRoom Person</h5>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5><strong>Guest Per Room - </strong>@detail.RoomType.GuestPerRoom Person</h5>
+                            </div>                       
                         </div>
 
-                        <div class="col-sm-12">
-                            <h5>
-                                @if (@Detail.RoomType.Cancellable.Equals(true))
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>
+                                @if (@detail.RoomType.Cancellable.Equals(true))
                                 {
                                     <label class="text-success">Free Cancellation</label> 
                                 }
@@ -64,8 +88,8 @@
                             
                                 }
                             </h5>
+                            </div>   
                         </div>
-
                     </div>
 
                 </div>
@@ -74,62 +98,63 @@
 
         </div>
 
-        <!--End Booking Content-->
+    </div>
 
-        <!--Cost and Guest-->
-        <div class="col-sm-6">
-            <!---Cost-->
-            <div class="row">
-                <div class="col-sm-12">
+    <!--End Booking Content-->
 
-                    <div class="panel panel-default">
+    <!--Cost and Guest-->
+    <div class="col-sm-7">
+        <!---Cost-->
+        <div class="row">
+            <div class="col-sm-12">
 
-                        <div class="panel-heading">
-                            <h3 class="panel-header">Cost Summary</h3>
-                        </div>
+                <div class="panel panel-default">
 
-                        <div class="col-sm-12" style="margin-top: 15px">
-                            <div class="row">
-                                <h5 class="col-sm-6"><strong>Room Charges(Per Room)</strong></h5>
-                                <h5 class="col-sm-6"><strong>$ @Detail.RoomType.PricePerNight x @Detail.Booking.NumberNight Night x @Detail.Booking.NumberRoom Room</strong></h5>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <hr style="margin: 5px 5px 5px 5px;" />
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <h3 class="col-sm-6"><strong class="text-danger">Total</strong></h3>
-                                <h3 class="col-sm-6"><strong class="text-danger">$ @Detail.Booking.TotalCharge</strong></h3>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-12">
-                            <p class="text-warning"><strong>Booking charges does not include Tax and ServiceFee.</strong></p>
-                        </div>
-
-
+                    <div class="panel-heading">
+                        <h3 class="panel-header">Cost Summary</h3>
                     </div>
 
+                    <div class="col-sm-12" style="margin-top: 15px">
+                        <div class="row">
+                            <h5 class="col-sm-6"><strong>Room Charges(Per Room)</strong></h5>
+                            <h5 class="col-sm-6"><strong>$ @detail.RoomType.PricePerNight x @detail.Booking.NumberNight Night x @detail.Booking.NumberRoom Room</strong></h5>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <hr style="margin: 5px 5px 5px 5px;" />
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <h3 class="col-sm-6"><strong class="text-danger">Total</strong></h3>
+                            <h3 class="col-sm-6"><strong class="text-danger">$ @detail.Booking.TotalCharge</strong></h3>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12">
+                        <p class="text-warning"><strong>Booking charges does not include Tax and ServiceFee.</strong></p>
+                    </div>
+
+
                 </div>
+
             </div>
-            <!---End Cost-->
+        </div>
+        <!---End Cost-->
 
-            <!---Guest Form-->
-            <div class="row">
-                <div class="col-sm-12">
-
-                    <div class="panel panel-default">
+        <!---Guest Form-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
 
                         @using (Html.BeginForm("Pay","Booking"))
                         { 
                             @Html.ValidationSummary(true)
 
                             <div class="col-sm-12">
-                                <h4><strong>Pay With PayPal</strong></h4>
+                                <h4><strong>Complete Your Booking</strong></h4>
                             </div> 
                             
                             <div class="col-sm-12">
@@ -140,16 +165,11 @@
                         }
 
                     </div>
-                </div>
-
             </div>
-            <!---End Guest Form-->
+
         </div>
-
-        <!--End Cost and Guest-->
-
-
-        <div class="col-sm-1"></div>
-
+        <!---End Guest Form-->
     </div>
+
+    <!--End Cost and Guest-->
 </div>

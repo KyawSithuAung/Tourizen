@@ -3,17 +3,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="col-sm-1"></div>
 
-    <div class="col-sm-10">
-        <div class="jumbotron">
-        <h2 class="text-success">Success</h2>
-        <p class="lead">Your transaction was success, check your confirmation email.</p>
-        <p>@Html.ActionLink("Finish","Index","Home", null, new { @class="btn btn-success btn-lg"})</p>
-      </div>
-    </div>
 
-    <div class="col-sm-1"></div>
+<div class="jumbotron">
+    <h2 class="text-success">Your booking was success.</h2>
+    <p class="lead">Thank you for your reservation with us.
+We sent a confirmation message to you via the Internet.
+ You do not need to reply to this e-mail, but you may wish to save it for your records.Thank you.
+    </p>
+    <p>@Html.ActionLink("Back To Home", "Index", "Home", null, new { @class = "btn btn-primary btn-lg" })</p>
 </div>
+
+
 
