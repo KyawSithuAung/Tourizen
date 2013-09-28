@@ -6,7 +6,7 @@
     <div class="col-sm-12">
 
         <div class="pannel pannel">
-            <h2 style="margin-top: 0px;">Featured Hotels</h2>
+            <h2 style="margin-top: 0px;">Featured</h2>
             <ul id="newStuff" class="nav nav-tabs nav-stacked" style="height: 550px; border: 0px solid black;">
                 @foreach (var item in Model.FRoomTypeViews)
                 {
@@ -18,7 +18,7 @@
                                 </td>
                                 <td class="col-sm-9">
 
-                                    <h4>@item.RoomType.GuestPerRoom
+                                    <h4>@item.RoomType.Name
                                     </h4>
                                     <p>
                                         @item.HotelName
