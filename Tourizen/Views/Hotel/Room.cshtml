@@ -1,0 +1,76 @@
+﻿@model Tourizen.ViewModels.RoomViewModel
+
+@{
+    ViewBag.Title = "Room";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Carousel
+                =========================================== -->
+<div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+        </div>
+        <div class="item">
+            <img src="" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+        </div>
+        <div class="item">
+            <img src="" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+        </div>
+    </div>
+
+</div>
+<!-- /.carousel -->
+<hr />
+
+<div class="row">
+
+    <!-- Chceck Availability-->
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            @{Html.RenderPartial("CheckRoomAvailablity", Model.Check);}
+        </div>
+    </div>
+    <!-- Chceck Availability-->
+
+
+    <!-- About Room-->
+    <div class="col-sm-8">
+        <div class="panel-body">
+        <div class="row">
+            <h3>@Model.Room.RoomType.Name<small>  ( @Html.ActionLink(@Model.Room.HotelName, "Hotel", "Hotel", new { id = @Model.Room.RoomType.HotelId }, null) )</small></h3>
+        </div>
+
+        <div class="row">
+            <p style="font-size: 27px;"><strong class="text-danger">$ @Model.Room.RoomType.PricePerNight</strong><small> per night</small></p>
+        </div>
+
+        <div class="row">
+            <p>Guest per room : @Model.Room.RoomType.GuestPerRoom person</p>
+        </div>
+
+        <hr />
+        <div class="row">
+            <p class="" style="font-size: 30px;">Room's Description</p>
+        </div>
+
+        <div class="row">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+        </div>
+    </div>
+    <!-- Price-->
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

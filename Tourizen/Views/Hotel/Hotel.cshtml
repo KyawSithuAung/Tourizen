@@ -1,0 +1,114 @@
+﻿@model Tourizen.ViewModels.HotelViewModel
+
+@{
+    ViewBag.Title = "Hotel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+        <div class="row">
+            <div class="col-sm-12" style="border: 0px solid #808080; padding-top: 5px;">
+
+
+                <!-- slider -->
+                <div id="myCarousel" class="carousel slide">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+                        </div>
+                        <div class="item">
+                            <img src="" data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+                        </div>
+                    </div>
+                </div>
+                <!-- slider -->
+                <br>
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <h3 style="padding-top: 0px; margin-top: 0px;"><strong>@Model.Hotel.Name</strong></h3>
+                        <p>
+                            Rate :
+                            @for (int i = 0; i < @Model.Hotel.Rate; i++)
+                            {
+                                <img src="~/Content/images/star-16.png" />
+                            }
+                        </p>
+                        <p>Area: DownTown </p>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <h4>Address</h4>
+
+                        <p>@Model.Hotel.StreetAddress </p>
+                        <p>@Model.Hotel.City</p>
+
+                    </div>
+
+                    <div class="col-sm-4">
+                        <h4>Contact</h4>
+
+                        <p><span class="glyphicon glyphicon-phone-alt"></span>@Model.Hotel.Phone1</p>
+                        <p><span class="glyphicon glyphicon-phone-alt"></span>@Model.Hotel.Phone2 </p>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-9">
+                    </div>
+                    <div class="col-sm-3 ">
+                    </div>
+                </div>
+
+                <hr/>
+
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="border: 0px solid #808080;">
+            <h4><strong>Rooms</strong></h4>
+
+
+            @foreach (var item in Model.RoomTypes)
+            {   
+                <div class="row" style="margin: 0px 0px 5px 2px; padding: 5px 0px 5px 0px;">
+                    <div class="col-sm-3 ">
+                        <img class="pull-left" src="holder.js/150x150" />
+                    </div>
+                    <div class="col-sm-6" style="border: 0px solid black;">
+                        <h4>@item.Name</h4>
+                        <p>Guest Per Room: @item.GuestPerRoom</p>
+
+                        @if (@item.Cancellable == true)
+                        { 
+                            <p>Cancellable</p>
+                        }
+                        else
+                        {
+                            <p>Non-cancellable</p>
+                        }
+
+                    </div>
+                    <div class="col-sm-3" style="border: 0px solid black;">
+                        <h4>$ @item.PricePerNight <small>per night</small></h4>
+                        @Html.ActionLink("Book Now", "Room", "Hotel", new { id = @item.RoomTypeId }, new { @class = "btn btn-danger btn-lg" })
+                    </div>
+                </div>
+                        
+            }
+
+
+        </div>
+

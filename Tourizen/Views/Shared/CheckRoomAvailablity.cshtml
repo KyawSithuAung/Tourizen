@@ -1,0 +1,54 @@
+﻿@model Tourizen.Models.CheckAvailablityModel
+
+
+
+    <div class="panel-heading">
+        <h3 class="panel-header">Check room availability and price</h3>
+    </div>
+
+    <div class="panel-body">
+
+        @using (Html.BeginForm())
+        { 
+            @Html.ValidationSummary(true)
+
+        
+            <div class="row">
+
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.CheckIn)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.CheckIn , new { id = "datepicker", @class = "form-control", @style = "margin-bottom:15px", placeholder = "Select Check-In Date" })
+                </div>
+            </div>
+                                    
+            <div class="row">
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.Night)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Night, new { @class = "form-control"})           
+                </div>
+            </div>
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.Night)</p>
+            </div>
+
+            <div class="row">
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.Room)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Room, new { @class = "form-control"})
+                </div>
+            </div> 
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.Room)</p>
+            </div>     
+    
+            @Html.HiddenFor(m => m.RoomTypeId, new { Value = Model.RoomTypeId })
+                                    
+            <div class="row">
+                <div class="col-lg-1">
+                    <input type="submit" class="btn btn-success btn-large btn-lg" value="Check Availablity"/>
+                </div>
+            </div>                             
+        }
+
+    </div>
+

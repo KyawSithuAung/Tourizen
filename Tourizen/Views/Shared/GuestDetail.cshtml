@@ -1,0 +1,77 @@
+﻿@model Tourizen.Models.NewGuest
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Confirm Your Booking</h3>
+    </div>
+
+    <div class="panel-body">
+
+        @using (Html.BeginForm())
+        { 
+            @Html.ValidationSummary(true)
+
+        
+            <div class="row">
+
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.FirstName)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.FirstName , new { @class = "form-control"})
+                </div>
+            </div>
+            
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.FirstName)</p>
+            </div>
+                                    
+            <div class="row">
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.LastName)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control"})           
+                </div>
+            </div>
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.LastName)</p>
+            </div>
+
+            <div class="row">
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.Email)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control"})
+                </div>
+            </div> 
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.Email)</p>
+            </div>     
+    
+            <div class="row">
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.Phone)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control"})
+                </div>
+            </div> 
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.Phone)</p>
+            </div>
+            
+            <div class="row">
+                <label class="col-lg-6 control-label">@Html.LabelFor(m => m.Country)</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control"})
+                </div>
+            </div> 
+            <div class="row">
+                <p class="text-danger" style="padding:0px 15px 0px 15px">@Html.ValidationMessageFor(m => m.Country)</p>
+            </div>
+                                    
+            <div class="row">
+                <div class="col-lg-1">
+                    <input type="submit" class="btn btn-success btn-large btn-lg" value="Containue"/>
+                </div>
+            </div>                             
+        }
+
+    </div>
+
+</div>

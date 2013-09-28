@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-10">
+        <div class="jumbotron">
+        <h2 class="text-success">Success</h2>
+        <p class="lead">Your transaction was success, check your confirmation email.</p>
+        <p>@Html.ActionLink("Finish","Index","Home", null, new { @class="btn btn-success btn-lg"})</p>
+      </div>
+    </div>
+
+    <div class="col-sm-1"></div>
+</div>
+

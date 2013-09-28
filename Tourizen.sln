@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourizen", "Tourizen\Tourizen.csproj", "{614759B3-560F-44C6-A8C7-9DC9A64D746C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tourizen.Tests", "Tourizen.Tests\Tourizen.Tests.csproj", "{541BD3B0-6734-4262-98E3-D5F74B0CEC49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourizenModels", "TourizenModels\TourizenModels.csproj", "{0684B467-BAFE-4C36-B2CC-2C90C9BD9E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourizenAdmin", "TourizenAdmin\TourizenAdmin.csproj", "{9C8F6389-485B-4DBE-8BC8-2603854DCABC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{614759B3-560F-44C6-A8C7-9DC9A64D746C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614759B3-560F-44C6-A8C7-9DC9A64D746C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614759B3-560F-44C6-A8C7-9DC9A64D746C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614759B3-560F-44C6-A8C7-9DC9A64D746C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541BD3B0-6734-4262-98E3-D5F74B0CEC49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541BD3B0-6734-4262-98E3-D5F74B0CEC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541BD3B0-6734-4262-98E3-D5F74B0CEC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541BD3B0-6734-4262-98E3-D5F74B0CEC49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0684B467-BAFE-4C36-B2CC-2C90C9BD9E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0684B467-BAFE-4C36-B2CC-2C90C9BD9E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0684B467-BAFE-4C36-B2CC-2C90C9BD9E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0684B467-BAFE-4C36-B2CC-2C90C9BD9E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C8F6389-485B-4DBE-8BC8-2603854DCABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8F6389-485B-4DBE-8BC8-2603854DCABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8F6389-485B-4DBE-8BC8-2603854DCABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8F6389-485B-4DBE-8BC8-2603854DCABC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

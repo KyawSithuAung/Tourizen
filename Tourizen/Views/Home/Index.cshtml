@@ -1,0 +1,87 @@
+﻿@model Tourizen.ViewModels.HomeViewModel
+
+
+<div class="row">
+    <!--Featured hotel list-->
+    <div class="col-sm-12">
+
+        <div class="pannel pannel">
+            <h2 style="margin-top: 0px;">Featured</h2>
+            <ul id="newStuff" class="nav nav-tabs nav-stacked" style="height: 550px; border: 0px solid black;">
+                @foreach (var item in Model.FRoomTypeViews)
+                {
+                    <li>
+                        <table style="border: 0px solid black; width: 100%">
+                            <tr>
+                                <td class="col-sm-0">
+                                    <img src="holder.js/100x100" class="" style="border: 0px solid red; width: 100px; height: 100px;" />
+                                </td>
+                                <td class="col-sm-9">
+
+                                    <h4>@item.RoomType.Name
+                                    </h4>
+                                    <p>
+                                        @item.HotelName
+                                    </p>
+                                    <p>State : @item.LocationName</p>
+
+                                </td>
+
+                                <td>
+
+                                    <h4>From $ @item.RoomType.PricePerNight</h4>
+                                    @Html.ActionLink("Book Now", "Room", "Hotel", new { id = @item.RoomType.RoomTypeId}, new { @class = "btn btn-danger" })
+
+                                </td>
+
+                            </tr>
+                        </table>
+                        <hr />
+                    </li> 
+                            
+                }
+
+            </ul>
+            <div class="pagination pagination-large">
+                <ul class="pager"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!--Location list panel-->
+    <div class="col-sm-6" style="margin-top: 50px">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Destinations In Myanmar</h3>
+          </div>
+          <div class="panel-body">
+            
+              @foreach (var item in Model.LocationGroups)
+              {
+                  <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>@item.Letter</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="list-group">
+                                @foreach (var loc in item.Locations)
+                                {
+                                    @Html.ActionLink(@loc.Name, "Location", "Home", new { id = @loc.LocationId }, new { @class="list-group-item"})
+                                }
+                            </div>
+                        </div>   
+                    </div>
+                  </div>
+              }
+
+          </div>
+        </div>
+    </div>
+    <!--End location list panel-->
+</div>
+
+

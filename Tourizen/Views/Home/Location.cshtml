@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Tourizen.Models.HotelListItemModel>
+
+
+@{
+    ViewBag.Title = "Location";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <!--Featured hotel list-->
+    <div class="col-sm-12">
+        <div class="page-header">
+            <h2>Hotels in @ViewBag.LocationName</h2>
+        </div>
+        <div class="container" style="min-height: 300px; max-height: 400px; overflow-x: auto;">
+            @foreach (var item in Model)
+            {
+                <table class="" style="border: 0px solid black; width: 100%">
+                    <tr>
+                        <td class="col-sm-0">
+                            <img src="holder.js/100x100" class="" style="border: 0px solid red; width: 100px; height: 100px;" />
+                        </td>
+                        <td class="col-sm-9">
+
+                            <h4>@item.Name
+                            </h4>
+                            <p>
+                                @for (int i = 0; i < @item.Rate; i++)
+                                {
+                                    <img src="~/Content/images/star-16.png" />
+                                }
+                            </p>
+                        </td>
+
+                        <td>
+
+                            <h4>From $ @item.RoomPrice</h4>
+                            @Html.ActionLink("Book Now", "Hotel", "Hotel", new { id = @item.HotelId }, new { @class = "btn btn-danger" })
+
+
+                        </td>
+
+                    </tr>
+                </table>
+                <hr />
+               
+            }
+        </div>
+        <!--End featured hotel list-->
+    </div>
+
+</div>
+
+
